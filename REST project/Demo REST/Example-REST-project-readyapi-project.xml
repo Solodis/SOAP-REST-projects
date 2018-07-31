@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="Example REST project" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" id="8deb3f44-9361-43ec-91ae-27649755b72f" updated="2.2.0 20171026-0943" xmlns:con="http://eviware.com/soapui/config">
+    <con:description>Demonstrates API calls to a local REST-based virtual service for creating a user account.</con:description><con:settings/>
+    
+    
+    <con:interface xsi:type="con:RestService" id="4481889c-6b0a-432b-b8b4-68d66f32e0a9" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://del.icio.us" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://del.icio.us</con:endpoint></con:endpoints><con:resource name="Bookmarks" path="/api/peej/bookmarks/" id="3b7d9e05-1a55-47bf-bdcb-a6ba0768d9d6"><con:settings/><con:parameters><con:parameter><con:name>id</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>start</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>end</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>name</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>type</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Bookmarks" id="b868b6d7-60ed-4f60-b0d5-31d40126cc99" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>text/html; charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element>html</con:element></con:representation><con:request name="Request 1" id="327bb024-b7d6-4684-9ec1-9c5280f8eb7b" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://del.icio.us</con:endpoint><con:request/><con:originalUri>https://del.icio.us/api/peej/bookmarks/</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="start" value="1"/>
+  <con:entry key="end" value="2"/>
+</con:parameters><con:parameterOrder><con:entry>start</con:entry><con:entry>end</con:entry><con:entry>id</con:entry><con:entry>name</con:entry><con:entry>type</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:testSuite id="71efc76c-6e40-4765-b130-fa89fa337b1a" name="ExampleTestSuite"><con:settings/><con:savedRecentRuns>1</con:savedRecentRuns><con:runType>SEQUENTIAL</con:runType><con:testCase id="625eeec4-2188-4185-a221-bfecfd810119" discardOkResults="true" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Example TestCase" searchProperties="true" timeout="0" maxResults="0"><con:settings><con:setting id="IncludeOverview">true</con:setting><con:setting id="IncludeResults">true</con:setting><con:setting id="FlowLayout">false</con:setting><con:setting id="ErrorDetails">true</con:setting><con:setting id="IncludeCoverage">true</con:setting><con:setting id="GeneratableJUnitReport@Style">Single Page (Print)</con:setting><con:setting id="GeneratableJUnitReport@Folder">D:\EPAM\Banch\SoapUI\Demo</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:testStep type="datasource" name="DataSource" id="b7caae85-6da6-4c5d-9547-6ea62f8c6878"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.teststeps.datasource.DataSourceContainer@prepared-properties">&lt;xml-fragment/></con:setting></con:settings><con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:dataSource type="Grid"><con:configuration><check><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry></xml-fragment>]]></check><row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">url</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">url</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">hidden</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row><row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">tags</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">tags</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row></con:configuration></con:dataSource><con:shared>true</con:shared><con:restartShared>true</con:restartShared><con:property>id</con:property><con:property>name</con:property><con:property>type</con:property><con:completeLastOperation>true</con:completeLastOperation><con:restartOnRun>true</con:restartOnRun></con:config></con:testStep><con:testStep type="restrequest" name="Example REST request" id="e1eb747f-78ef-4c40-b304-dae7a9b1a273"><con:settings/><con:config service="http://del.icio.us" methodName="Bookmarks" resourcePath="/api/peej/bookmarks/" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Example REST request" id="5ea9ec8a-d1c5-4ef0-97e9-e39c6c582633" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://del.icio.us</con:endpoint><con:request/><con:originalUri>https://del.icio.us/api/peej/bookmarks/</con:originalUri><con:assertion type="XPath Match" id="9ad07f82-434b-4599-83d2-f53bb96f8b88" name="Check for existence of [@id]"><con:configuration><path>exists( //html/body/div/div/form/div/input/@id)</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="b0f9588d-6403-4fc5-8169-598fbfb725a5" name="Check count of [@id]"><con:configuration><path>count( //html/body/div/div/form/div/input/@id)</path><content>3</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="Simple Contains" id="15eefadf-e01f-4342-b86d-7acab289d36c" name="Contains"><con:configuration><token>url</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple NotContains" id="8b2d146b-ebef-4632-b064-818a4b9dc02c" name="Not Contains"><con:configuration><token>gfldngs</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="XPath Match" id="953495ad-ebec-4c8b-a556-3524efee0ccb" name="XPath Match"><con:configuration><path>//html/body/@id</path><content>index</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="start" value=""/>
+  <con:entry key="name" value="${DataSource#name}"/>
+  <con:entry key="end" value=""/>
+  <con:entry key="id" value="${DataSource#id}"/>
+  <con:entry key="type" value="${DataSource#type}"/>
+</con:parameters><con:parameterOrder><con:entry>id</con:entry><con:entry>start</con:entry><con:entry>end</con:entry><con:entry>name</con:entry><con:entry>type</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="datasourceloop" name="DataSource Loop" id="cac8540b-2771-4cf1-aeed-06ef88eb8aac"><con:settings/><con:config><dataSourceStep>DataSource</dataSourceStep><targetStep>Example REST request</targetStep></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints><con:testStepId>e1eb747f-78ef-4c40-b304-dae7a9b1a273</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:restMockService port="8096" path="/" name="Account creation mock" host="localhost" id="c92f5b66-e726-4417-bb48-e3b79ab9dc96" docroot="">
+        <con:settings/>
+        <con:properties/>
+        <con:constraints><con:congestion>0</con:congestion><con:inputBandwidth>-1</con:inputBandwidth><con:outputBandwidth>-1</con:outputBandwidth><con:maxThreadPoolCapacity>20</con:maxThreadPoolCapacity><con:coreThreadPoolCapacity>5</con:coreThreadPoolCapacity><con:virtError><con:start>0</con:start><con:endless>true</con:endless></con:virtError></con:constraints><con:headerValidator/><con:restMockAction name="accountcreation" method="GET" resourcePath="/accountcreation" id="bd608e76-0936-40e0-ba81-ec1e66c42bcb">
+            <con:settings/>
+            <con:defaultResponse>Form view</con:defaultResponse>
+            <con:dispatchStyle>SEQUENCE</con:dispatchStyle>
+            <con:dispatchConfig/><con:dispatchXPath/><con:routeScript/><con:response name="Form View" httpResponseStatus="200" mediaType="text/html" id="d9c30178-64c2-40fa-9b42-4e9dbb8f0827" dataSource="">
+                <con:settings/>
+                <con:responseContent><![CDATA[<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Account registration</title>
+		<meta name="description" content="SoapUI Sample content">
+	</head>
+
+	<body>
+  		<h1>Welcome!</h1>
+  		<form action="accountcreation" method="post" name="account_registration_form">
+  			<input type="text" name="username" placeholder="John Doe" />
+			<input type="password" name="password" />
+			<input type="submit" name="password" />
+		</form>
+  	</body>
+</html>]]></con:responseContent>
+            </con:response>
+        </con:restMockAction>
+        <con:restMockAction name="accountcreation" method="POST" resourcePath="/accountcreation" id="0c4708e7-5662-494d-a5ed-e6025c53694c">
+            <con:settings/>
+            <con:defaultResponse>Successful</con:defaultResponse>
+            <con:dispatchStyle>SEQUENCE</con:dispatchStyle>
+            <con:dispatchConfig/><con:dispatchXPath/><con:routeScript/><con:response name="Successful" httpResponseStatus="200" mediaType="text/html" id="5721044e-32e6-4c8a-ac45-7c51f5a9f256" dataSource="">
+                <con:settings/>
+                <con:responseContent><![CDATA[<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Account registration</title>
+		<meta name="description" content="SoapUI Sample content"/>
+	</head>
+
+	<body>
+  		<h1>Welcome!</h1>
+  		<p>You have successfully registered your account!</p>
+	</body>
+</html>]]></con:responseContent>
+            </con:response>
+            <con:response name="Already Existing User" httpResponseStatus="200" mediaType="text/html" id="94b4f8ac-497c-41d0-9636-c53eadf03b41" dataSource="">
+                <con:settings/>
+                <con:responseContent><![CDATA[<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Account registration</title>
+		<meta name="description" content="SoapUI Sample content">
+	</head>
+
+	<body>
+  		<h1>User already exists</h1>
+  		<p>A user has already registered with the selected username - try another.</p>
+	</body>
+</html>]]></con:responseContent>
+            </con:response>
+            <con:response name="Internal Server Error" httpResponseStatus="500" mediaType="text/html" id="7eadb407-869a-4ef9-a3b7-f080c596df84" dataSource="">
+                <con:settings/>
+                <con:responseContent><![CDATA[<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Internal Server Error</title>
+		<meta name="description" content="SoapUI Sample content"/>
+	</head>
+
+	<body>
+  		<h1>The server was unable to serve your request</h1>
+  		<p>Due to some technical error the server was unable to complete the request, pleas come back later.</p>
+	</body>
+</html>]]></con:responseContent>
+            </con:response>
+        </con:restMockAction>
+    </con:restMockService>
+    <con:savedRecentRuns>1</con:savedRecentRuns><con:requirements/>
+    <con:properties/>
+    <con:wssContainer/>
+    <con:databaseConnectionContainer/>
+    <con:jmsConnectionContainer/><con:oAuth2ProfileContainer/>
+    <con:oAuth1ProfileContainer/><con:reporting>
+        <con:xmlTemplates/>
+        <con:parameters/>
+    </con:reporting>
+    <con:sensitiveInformation/>
+<con:authRepository/><con:tags/></con:soapui-project>
