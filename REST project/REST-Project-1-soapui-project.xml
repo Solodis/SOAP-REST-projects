@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="8c332b43-f719-4a49-bfc8-ebea194049bc" activeEnvironment="Default" name="REST Project 1" resourceRoot="" soapui-version="5.4.0" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="Port">8081</con:setting><con:setting id="Set endpoint for HTTP Tunnel:">https://</con:setting><con:setting id="HTTP tunnel - KeyStore"/><con:setting id="HTTP tunnel - Password"/><con:setting id="HTTP tunnel - KeyPassword"/><con:setting id="HTTP tunnel - TrustStore"/><con:setting id="HTTP tunnel - TrustStore Password"/><con:setting id="Reuse request state">false</con:setting><con:setting id="HTTP tunnel - Set SSL Client Key Store path"/><con:setting id="Content types to monitor">*/html, */xml, */soap+xml, */json, */x-json, */javascript, */x-amf, */http</con:setting><con:setting id="HTTP tunnel - Set SSL Client Key Store Password"/><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+<con:soapui-project id="8c332b43-f719-4a49-bfc8-ebea194049bc" activeEnvironment="Default" name="GoogleTestAPIsProject" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="Port">8081</con:setting><con:setting id="Set endpoint for HTTP Tunnel:">https://</con:setting><con:setting id="HTTP tunnel - KeyStore"/><con:setting id="HTTP tunnel - Password"/><con:setting id="HTTP tunnel - KeyPassword"/><con:setting id="HTTP tunnel - TrustStore"/><con:setting id="HTTP tunnel - TrustStore Password"/><con:setting id="Reuse request state">false</con:setting><con:setting id="HTTP tunnel - Set SSL Client Key Store path"/><con:setting id="Content types to monitor">*/html, */xml, */soap+xml, */json, */x-json, */javascript, */x-amf, */http</con:setting><con:setting id="HTTP tunnel - Set SSL Client Key Store Password"/><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
   <con:entry key="Report Format(s)" value=""/>
   <con:entry key="Host:Port" value=""/>
   <con:entry key="Export JUnit Results" value="true"/>
@@ -30,10 +30,64 @@
   <con:entry key="Domain" value=""/>
   <con:entry key="Tool Args" value=""/>
   <con:entry key="Save Project" value="false"/>
-</xml-fragment>]]></con:setting></con:settings><con:interface xsi:type="con:RestService" id="8313a37f-def2-4dc5-b83c-9c7b7aee6839" wadlVersion="http://wadl.dev.java.net/2009/02" name="" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints/><con:resource name="C:\Users\Vyacheslav_Utenkov\Desktop\REST project" path="/maps/api/geocode/xml?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&amp;amp" id="c8f39cf2-a455-4a2d-80fd-b830c8a47042"><con:settings/><con:parameters/><con:method name="C:\Users\Vyacheslav_Utenkov\Desktop\REST project 1" id="e85f526d-98e1-4973-aeb1-052e97748449" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/xml; charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element>GeocodeResponse</con:element></con:representation><con:request name="Request 1" id="8d8f1af8-7989-4b6d-9b02-600073c225f4" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://maps.googleapis.com</con:endpoint><con:request/><con:originalUri>http://maps.googleapis.com/maps/api/geocode/xml</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request></con:method></con:resource></con:interface><con:testSuite id="173f2365-b80f-48c1-bf86-fbd4e0b34339" name="SimpleTestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="6da61476-85dd-4cf2-b9eb-3d284d54fb9f" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="XpathCheck" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="Step 1" id="72b8a79a-eb15-4ea1-81ce-cdb12fa127f5"><con:settings/><con:config service="" resourcePath="/maps/api/geocode/xml?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&amp;amp" methodName="C:\Users\Vyacheslav_Utenkov\Desktop\REST project 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Step 1" id="8d8f1af8-7989-4b6d-9b02-600073c225f4" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://maps.googleapis.com</con:endpoint><con:request/><con:originalUri>http://maps.googleapis.com/maps/api/geocode/xml</con:originalUri><con:assertion type="XPath Match" id="e0fcf91d-32d8-4176-baeb-7f3758160292" name="XPath Match"><con:configuration><path>/GeocodeResponse[1]/result[1]/address_component[1]/long_name[1]</path><content>1600</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="006d23a6-b47d-4ac1-b834-977136ae5f5e" name="Short XPath Match"><con:configuration><path>.//address_component[1]/long_name</path><content>1600</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="a29773fb-10b0-4345-996a-8c2e704e288f" name="long_name assertion"><con:configuration><path>.//address_component[4]/long_name = 'Santa Clara County' and
+</xml-fragment>]]></con:setting></con:settings><con:interface xsi:type="con:RestService" id="8313a37f-def2-4dc5-b83c-9c7b7aee6839" wadlVersion="http://wadl.dev.java.net/2009/02" name="" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints/><con:resource name="C:\Users\Vyacheslav_Utenkov\Desktop\REST project" path="/maps/api/geocode/xml?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&amp;amp" id="c8f39cf2-a455-4a2d-80fd-b830c8a47042"><con:settings/><con:parameters/><con:method name="C:\Users\Vyacheslav_Utenkov\Desktop\REST project 1" id="e85f526d-98e1-4973-aeb1-052e97748449" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/xml; charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element>GeocodeResponse</con:element></con:representation><con:representation type="FAULT"><con:mediaType>text/html; charset=UTF-8</con:mediaType><con:status>400</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/xml; charset=UTF-8</con:mediaType><con:status>400</con:status><con:params/><con:element>GeocodeResponse</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>text/html; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/xml</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="8d8f1af8-7989-4b6d-9b02-600073c225f4" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://maps.googleapis.com</con:endpoint><con:request/><con:originalUri>http://maps.googleapis.com/maps/api/geocode/xml</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request></con:method></con:resource></con:interface><con:testSuite id="173f2365-b80f-48c1-bf86-fbd4e0b34339" name="SimpleTestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="6da61476-85dd-4cf2-b9eb-3d284d54fb9f" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="XpathCheck" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="CheckNodesAreExists" id="72b8a79a-eb15-4ea1-81ce-cdb12fa127f5"><con:settings/><con:config service="" resourcePath="/maps/api/geocode/xml?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&amp;amp" methodName="C:\Users\Vyacheslav_Utenkov\Desktop\REST project 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Step 1" id="8d8f1af8-7989-4b6d-9b02-600073c225f4" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://maps.googleapis.com</con:endpoint><con:request/><con:originalUri>http://maps.googleapis.com/maps/api/geocode/xml</con:originalUri><con:assertion type="XPath Match" id="e0fcf91d-32d8-4176-baeb-7f3758160292" name="XPath Match"><con:configuration><path>/GeocodeResponse[1]/result[1]/address_component[1]/long_name[1]</path><content>1600</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="006d23a6-b47d-4ac1-b834-977136ae5f5e" name="Short XPath Match"><con:configuration><path>//address_component[1]/long_name</path><content>1600</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="a29773fb-10b0-4345-996a-8c2e704e288f" name="long_name assertion"><con:configuration><path>.//address_component[4]/long_name = 'Santa Clara County' and
 .//address_component[4]/long_name != '94043'</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="bb7540cf-4845-44fd-a6a4-75bf8950272c" name="type assertion"><con:configuration><path>.//address_component[2]/type = 'route' and
 .//address_component[2]/type != 'postal_code'</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="5225e42f-9110-4367-b053-d84f105dd626" name="short_name assertion"><con:configuration><path>.//address_component[6]/short_name = 'US' and
-.//address_component[6]/short_name != 'Amphitheatre Pkwy'</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="59469fb5-8f26-4d49-8298-64a74c868c40" name="lat assertion"><con:configuration><path>.//location/lat</path><content>37.4226231</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="6e292e35-7e62-48f0-b5c0-9815b5435454" name="lng assertion"><con:configuration><path>.//northeast/lng</path><content>-122.0832349</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="f2860ab7-fcda-4975-8649-8c154695be92" name="Valid HTTP Status Codes"><con:configuration><codes>200, 201</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="7d1e6927-c930-47ed-9da0-7b89fa421b56" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ValueCheck" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="Step 1" id="7ce33904-415f-4fea-a09f-83035b01ebc2"><con:settings/><con:config service="" resourcePath="/maps/api/geocode/xml?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&amp;amp" methodName="C:\Users\Vyacheslav_Utenkov\Desktop\REST project 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Step 1" id="8d8f1af8-7989-4b6d-9b02-600073c225f4" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://maps.googleapis.com</con:endpoint><con:request/><con:originalUri>http://maps.googleapis.com/maps/api/geocode/xml</con:originalUri><con:assertion type="XPath Match" id="0a68f335-dd63-4af7-ba5b-0fdb72edcdae" name="XPath Match"><con:configuration><path>//southwest/lng = '-122.0859329' and 
+.//address_component[6]/short_name != 'Amphitheatre Pkwy'</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="59469fb5-8f26-4d49-8298-64a74c868c40" name="lat assertion"><con:configuration><path>.//location/lat</path><content>37.4226231</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="6e292e35-7e62-48f0-b5c0-9815b5435454" name="lng assertion"><con:configuration><path>.//northeast/lng</path><content>-122.0832349</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="f2860ab7-fcda-4975-8649-8c154695be92" name="Valid HTTP Status Codes"><con:configuration><codes>200, 201</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="9dc130a5-78b8-4622-ac9c-ac475f0052ef" name="Script Assertion"><con:configuration><scriptText>import com.eviware.soapui.support.XmlHolder
+
+def holder = new XmlHolder(messageExchange.responseContentAsXml)
+assert holder.getDomNode("//address_component[1]/long_name") != null</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="1623c262-7178-4434-bbca-3be7de8afd67" name="script for type assertion"><con:configuration><scriptText>import com.eviware.soapui.support.XmlHolder
+def holder = new XmlHolder(messageExchange.responseContentAsXml)
+
+//The assertion checks the "//address_component[2]/type" node contains "route" value
+assert holder.getNodeValue("//address_component[2]/type").contains('route')
+
+//The assertion checks the "//address_component[2]/type" node doesn't contain "postal_code" value
+assert !holder.getNodeValue("//address_component[2]/type").contains('postal_code')
+</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="79fbc4dc-e9f4-4790-905f-da523af9217c" name="script for long_name assertion"><con:configuration><scriptText>import com.eviware.soapui.support.XmlHolder
+
+def holder = new XmlHolder(messageExchange.responseContentAsXml)
+
+//The assertion checks "address_component[4]/long_name" node contains 'Santa Clara County' value
+assert holder.getNodeValue("//address_component[4]/long_name").contains('Santa Clara County')
+
+//The assertion checks "address_component[4]/long_name" node does not contain '94043' value
+assert !holder.getNodeValue("//address_component[4]/long_name").contains('94043') 
+
+</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="d61e811e-2dfb-41e9-9877-bccdbdc733da" name="script for short Xpath assertion"><con:configuration><scriptText>import com.eviware.soapui.support.XmlHolder
+
+def holder = new XmlHolder(messageExchange.responseContentAsXml)
+
+//The assertion checks the full path exists and contains correct value
+assert holder.getDomNode("/GeocodeResponse[1]/result[1]/address_component[1]/long_name[1]") != null
+assert holder.getNodeValue("/GeocodeResponse[1]/result[1]/address_component[1]/long_name[1]").contains('1600')
+
+//The assertion checks the short path exists and contains the same correct value as the full path
+assert holder.getDomNode("//address_component[1]/long_name") != null
+assert holder.getNodeValue("//address_component[1]/long_name[1]").contains('1600')</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="7fa84a08-0e24-4d63-9cb7-db87893ec3d7" name="script for short_name assertion"><con:configuration><scriptText>import com.eviware.soapui.support.XmlHolder
+
+def holder = new XmlHolder(messageExchange.responseContentAsXml)
+
+//The assertion checks "//address_component[6]/short_name" node contains 'US' value
+assert holder.getNodeValue("//address_component[6]/short_name").contains('US')
+
+//The assertion checks "//address_component[6]/short_name" node does not contain 'Amphitheatre Pkwy'' value
+assert !holder.getNodeValue("//address_component[6]/short_name").contains('Amphitheatre Pkw')</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="333d8892-1beb-4c12-b8d3-04a9cc8e78dd" name="script HTTP status code assertion "><con:configuration><scriptText>def value = messageExchange.responseHeaders["#status#"]
+def httpStatusCode = (value =~ "[1-5]\\d\\d")[0]
+
+def ok = '200'
+
+//The assertion checks httpStatusCode is 200(OK)
+assert ok == httpStatusCode</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="4ffe8dda-ae74-4926-8e5a-aaca80d06ff5" name="script for lat assertion"><con:configuration><scriptText>import com.eviware.soapui.support.XmlHolder
+def holder = new XmlHolder(messageExchange.responseContentAsXml)
+
+//The assertion checks the //location/lat contains "37.4226231" value
+assert holder.getNodeValue("//location/lat").contains('37.4226231')</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="eea7a9dc-c9e2-4150-8d58-441a497f6b93" name="script for lng assertion"><con:configuration><scriptText>import com.eviware.soapui.support.XmlHolder
+
+def holder = new XmlHolder(messageExchange.responseContentAsXml)
+
+//The assertion checks "//northeast/lng" node contains '-122.0832349' value
+assert holder.getNodeValue("//northeast/lng").contains('-122.0832349')</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="7d1e6927-c930-47ed-9da0-7b89fa421b56" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ValueCheck" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="CheckValuesInTheNodes" id="7ce33904-415f-4fea-a09f-83035b01ebc2"><con:settings/><con:config service="" resourcePath="/maps/api/geocode/xml?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&amp;amp" methodName="C:\Users\Vyacheslav_Utenkov\Desktop\REST project 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Step 1" id="8d8f1af8-7989-4b6d-9b02-600073c225f4" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://maps.googleapis.com</con:endpoint><con:request/><con:originalUri>http://maps.googleapis.com/maps/api/geocode/xml</con:originalUri><con:assertion type="XPath Match" id="0a68f335-dd63-4af7-ba5b-0fdb72edcdae" name="XPath Match"><con:configuration><path>//southwest/lng = '-122.0859329' and 
 //southwest/lat = '37.4212741'</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" id="0e55913e-434a-4849-9acd-1f08511d6dc0" name="ShortNameAssertion"><con:configuration><path>//address_component[1]/short_name = '1600' and 
 //address_component[2]/short_name = 'Amphitheatre Pkwy' and 
 //address_component[3]/short_name = 'Mountain View' and 
@@ -47,4 +101,73 @@
 //address_component[4]/type = 'political' and 
 //address_component[5]/type = 'political' and 
 //address_component[6]/type = 'political' and 
-//address_component[7]/type = 'postal_code'</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="Invalid HTTP Status Codes" id="5b27a2c7-5615-4155-8351-9f228796582c" name="Invalid HTTP Status Codes"><con:configuration><codes>404</codes></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="1558c09d-eb55-451f-846f-7db05aec6068" name="Valid HTTP Status Codes"><con:configuration><codes>200, 201</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+//address_component[7]/type = 'postal_code'</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="Invalid HTTP Status Codes" id="5b27a2c7-5615-4155-8351-9f228796582c" name="Invalid HTTP Status Codes"><con:configuration><codes>404</codes></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="1558c09d-eb55-451f-846f-7db05aec6068" name="Valid HTTP Status Codes"><con:configuration><codes>200, 201</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="a80be0d2-37d2-45ac-b041-a504c6412aca" name="script for HTTP status code assertion"><con:configuration><scriptText>def value = messageExchange.responseHeaders["#status#"]
+def httpStatusCode = (value =~ "[1-5]\\d\\d")[0]
+
+def ok = '200'
+
+//The assertion checks httpStatusCode is 200(OK)
+assert ok == httpStatusCode</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="b06e6dcc-00ea-4be8-91b7-dd630b827091" name="script for type all values assertion"><con:configuration><scriptText>import com.eviware.soapui.support.XmlHolder
+def holder = new XmlHolder(messageExchange.responseContentAsXml)
+
+//The assertion checks the "//address_component[1]/type" node contains "street_number" value
+assert holder.getNodeValue("//address_component[1]/type").contains('street_number')
+
+//The assertion checks the "//address_component[2]/type" node contains "route" value
+assert holder.getNodeValue("//address_component[2]/type").contains('route')
+
+//The assertion checks the "//address_component[3]/type[1]" node contains "locality" value
+assert holder.getNodeValue("//address_component[3]/type[1]").contains('locality')
+
+//The assertion checks the "//address_component[3]/type[2]" node contains "political" value
+assert holder.getNodeValue("//address_component[3]/type[2]").contains('political')
+
+//The assertion checks the "//address_component[4]/type[1]" node contains "administrative_area_level_2" value
+assert holder.getNodeValue("//address_component[4]/type[1]").contains('administrative_area_level_2')
+
+//The assertion checks the "//address_component[4]/type[2]" node contains "political" value
+assert holder.getNodeValue("//address_component[4]/type[2]").contains('political')
+
+//The assertion checks the "//address_component[5]/type[1]" node contains "administrative_area_level_1" value
+assert holder.getNodeValue("//address_component[5]/type[1]").contains('administrative_area_level_1')
+
+//The assertion checks the "//address_component[5]/type[2]" node contains "political" value
+assert holder.getNodeValue("//address_component[5]/type[2]").contains('political')
+
+//The assertion checks the "//address_component[6]/type[1]" node contains "country" value
+assert holder.getNodeValue("//address_component[6]/type[1]").contains('country')
+
+//The assertion checks the "//address_component[6]/type[2]" node contains "political" value
+assert holder.getNodeValue("//address_component[6]/type[2]").contains('political')
+
+//The assertion checks the "//address_component[7]/type" node contains "postal_code" value
+assert holder.getNodeValue("//address_component[7]/type").contains('postal_code')</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="b06e6dcc-00ea-4be8-91b7-dd630b827091" name="script for short_name all values assertion"><con:configuration><scriptText>import com.eviware.soapui.support.XmlHolder
+def holder = new XmlHolder(messageExchange.responseContentAsXml)
+
+//The assertion checks the "//address_component[1]/short_name" node contains "1600" value
+assert holder.getNodeValue("//address_component[1]/short_name").contains('1600')
+
+//The assertion checks the "//address_component[2]/short_name" node contains "Amphitheatre Pkwy'" value
+assert holder.getNodeValue("//address_component[2]/short_name").contains('Amphitheatre Pkwy')
+
+//The assertion checks the "//address_component[3]/short_name" node contains "Mountain View'" value
+assert holder.getNodeValue("//address_component[3]/short_name").contains('Mountain View')
+
+//The assertion checks the "//address_component[4]/short_name" node contains "Santa Clara County" value
+assert holder.getNodeValue("//address_component[4]/short_name").contains('Santa Clara County')
+
+//The assertion checks the "//address_component[5]/short_name" node contains "administrative_area_level_2" value
+assert holder.getNodeValue("//address_component[5]/short_name").contains('CA')
+
+//The assertion checks the "//address_component[6]/short_name" node contains "political" value
+assert holder.getNodeValue("//address_component[6]/short_name").contains('US')
+
+//The assertion checks the "//address_component[7]/short_name" node contains "administrative_area_level_1" value
+assert holder.getNodeValue("//address_component[7]/short_name").contains('94043')</scriptText></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" id="b06e6dcc-00ea-4be8-91b7-dd630b827091" name="script for lat and lng values assertion"><con:configuration><scriptText>import com.eviware.soapui.support.XmlHolder
+def holder = new XmlHolder(messageExchange.responseContentAsXml)
+
+//The assertion checks the "//southwest/lng" node contains "-122.0859329" value
+assert holder.getNodeValue("//southwest/lng").contains('-122.0859329')
+
+//The assertion checks the "//southwest/lat" node contains "37.4212741'" value
+assert holder.getNodeValue("//southwest/lat").contains('37.4212741')</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
